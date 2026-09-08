@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blanche Sebahoun — Sage-femme</title>
+<meta name="description" content="Blanche Sebahoun, sage-femme libérale à Paris 16e : préparation à la naissance, rééducation abdomino-périnéale, consultation allaitement, visites à domicile.">
+<meta name="theme-color" content="#FFA1E0">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blanche Sebahoun — Sage-femme">
+<meta property="og:description" content="Sage-femme libérale à Paris 16e : préparation à la naissance, rééducation abdomino-périnéale, consultation allaitement, visites à domicile.">
+<meta property="og:image" content="hero.jpg">
+<meta property="og:locale" content="fr_FR">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23FFA1E0'/%3E%3Ctext x='50' y='66' font-size='54' text-anchor='middle' fill='white' font-family='Georgia,serif'%3EB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --accent: #FFA1E0;
+    --accent-hover: #F27DCE;
+    --ink: #2A2323;
+    --ink-heading: #211B1B;
+    --ink-body: #4A4040;
+    --ink-soft: #6B5F5F;
+    --ink-faint: #A79999;
+    --paper: #FFFDFC;
+    --paper-soft: #FFF3FA;
+    --paper-deep: #FFEAF7;
+    --card: #ffffff;
+    --card-soft: #FFF9FD;
+    --line: #F2E2EE;
+    --line-deep: #F3C9E6;
+    --header-h: 76px;
+  }
+  *{ box-sizing: border-box; overflow-anchor: none; }
+  html{ scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    *, *::before, *::after{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+  }
+  body{
+    margin: 0;
+    font-family: 'Work Sans', system-ui, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    overflow-anchor: none;
+  }
+  a{ color: inherit; text-decoration: none; }
+  ul{ margin: 0; padding: 0; list-style: none; }
+  img{ max-width: 100%; display: block; }
+  .wrap{ max-width: 1200px; margin: 0 auto; padding-left: 48px; padding-right: 48px; }
+  h1, h2, h3{ font-family: 'Lora', serif; margin: 0; color: var(--ink-heading); }
+  .eyebrow{ font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  .section-anchor{ scroll-margin-top: var(--header-h); }
+
+  .skip-link{
+    position: absolute; left: 12px; top: -60px;
+    background: var(--accent); color: #fff; padding: 10px 18px;
+    border-radius: 8px; font-size: 14px; font-weight: 600; z-index: 100;
+    transition: top .15s;
+  }
+  .skip-link:focus{ top: 12px; }
+
+  a:focus-visible, button:focus-visible, summary:focus-visible{
+    outline: 2px solid var(--accent-hover); outline-offset: 3px; border-radius: 4px;
+  }
+
+  /* nav */
+  header{
+    position: sticky; top: 0; z-index: 20;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 48px;
+    border-bottom: 1px solid var(--line);
+    background: rgba(255,253,252,0.92);
+    backdrop-filter: blur(6px);
+    transition: box-shadow .2s ease, padding .2s ease;
+    min-height: var(--header-h);
+  }
+  header.is-scrolled{
+    box-shadow: 0 6px 20px rgba(43,20,35,.06);
+  }
+  .brand{ display: flex; flex-direction: column; line-height: 1.1; }
+  .brand-name{ font-family: 'Lora', serif; font-size: 19px; font-weight: 600; color: var(--accent); }
+  .brand-role{ font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); }
+  nav{ display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+  nav a{ font-size: 14px; font-weight: 500; position: relative; padding: 4px 0; transition: color .15s; }
+  nav a::after{
+    content: ""; position: absolute; left: 0; right: 100%; bottom: -2px; height: 2px;
+    background: var(--accent-hover); transition: right .2s ease;
+  }
+  nav a:hover{ color: var(--accent-hover); }
+  nav a:hover::after, nav a.active::after{ right: 0; }
+  nav a.active{ color: var(--accent-hover); }
+  .nav-toggle{
+    display: none; align-items: center; justify-content: center;
+    width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--line);
+    background: var(--card); cursor: pointer; flex: none;
+  }
+  .nav-toggle svg{ pointer-events: none; }
+  .nav-toggle .icon-close{ display: none; }
+  .nav-toggle[aria-expanded="true"] .icon-open{ display: none; }
+  .nav-toggle[aria-expanded="true"] .icon-close{ display: block; }
+
+  /* buttons */
+  .btn{
+    display: inline-block;
+    background: var(--accent); color: #fff;
+    padding: 14px 28px; border-radius: 999px;
+    font-size: 14px; font-weight: 600;
+    transition: background .15s, transform .15s, box-shadow .15s;
+    box-shadow: 0 1px 2px rgba(43,20,35,.06);
+  }
+  .btn:hover{ background: var(--accent-hover); transform: translateY(-1px); box-shadow: 0 8px 18px rgba(242,125,206,.28); }
+  .btn:active{ transform: translateY(0); }
+  .btn-ghost{
+    font-size: 14px; font-weight: 600; color: var(--ink);
+    border-bottom: 1px solid var(--ink); padding-bottom: 2px;
+    transition: color .15s, border-color .15s;
+  }
+  .btn-ghost:hover{ color: var(--accent-hover); border-color: var(--accent-hover); }
+
+  /* hero */
+  .hero{
+    display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;
+    padding: 80px 0 88px;
+  }
+  .hero-copy{ display: flex; flex-direction: column; gap: 26px; }
+  .hero h1{ font-size: 40px; line-height: 1.25; font-weight: 600; }
+  .hero p{ font-size: 16px; line-height: 1.7; color: var(--ink-body); margin: 0; max-width: 46ch; }
+  .hero-actions{ display: flex; align-items: center; gap: 26px; flex-wrap: wrap; margin-top: 4px; }
+  .hero-media{ position: relative; }
+  .hero-media::before{
+    content: ""; position: absolute; inset: 16px -16px -16px 16px;
+    border: 1.5px solid var(--accent); border-radius: 20px;
+  }
+  .hero-media-frame{
+    position: relative; width: 100%; aspect-ratio: 4 / 3; border-radius: 20px; overflow: hidden;
+    background:
+      radial-gradient(circle at 30% 25%, rgba(255,161,224,.35), transparent 55%),
+      linear-gradient(135deg, var(--paper-deep), var(--paper-soft));
+  }
+  .hero-media-fallback{
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  }
+  .hero-media-fallback svg{ opacity: .5; }
+  .hero-media img{ position: relative; width: 100%; height: 100%; object-fit: cover; }
+
+  /* sections */
+  section{ padding: 88px 0; }
+  section.tint{ background: var(--paper-soft); }
+  section.tint-deep{ background: var(--paper-deep); }
+  .section-head{ display: flex; flex-direction: column; gap: 10px; margin-bottom: 44px; max-width: 60ch; }
+  .section-head h2{ font-size: 28px; font-weight: 600; }
+
+  /* scroll reveal */
+  .reveal{ opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.is-visible{ opacity: 1; transform: none; }
+  .reveal-stagger.is-visible .reveal-item:nth-child(1){ transition-delay: .05s; }
+  .reveal-stagger.is-visible .reveal-item:nth-child(2){ transition-delay: .12s; }
+  .reveal-stagger.is-visible .reveal-item:nth-child(3){ transition-delay: .19s; }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ opacity: 1; transform: none; transition: none; }
+  }
+
+  /* cards */
+  .card{
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 1px 2px rgba(43,20,35,0.04);
+    transition: box-shadow .15s, transform .15s;
+  }
+  .card:hover{ box-shadow: 0 4px 8px rgba(43,20,35,.05), 0 14px 28px rgba(43,20,35,.08); transform: translateY(-2px); }
+
+  .prep-grid{ display: grid; grid-template-columns: 1.3fr 1fr; gap: 28px; align-items: start; }
+  .prep-card h3{ font-size: 20px; font-weight: 600; margin-bottom: 6px; }
+  .prep-tag{ font-size: 13px; color: var(--accent); font-weight: 600; }
+  .prep-card ul{ display: flex; flex-direction: column; gap: 8px; }
+  .prep-card li{ display: flex; gap: 8px; font-size: 14px; line-height: 1.55; color: var(--ink-body); }
+  .prep-card li::before{ content: "—"; color: var(--accent); flex: none; }
+  .prep-card p.desc{ font-size: 14px; line-height: 1.65; color: var(--ink-body); margin: 0 0 14px; }
+  .prep-head{ margin-bottom: 12px; }
+
+  /* accordion */
+  .acc{ border-bottom: 1px solid var(--line); }
+  .acc:first-of-type{ border-top: 1px solid var(--line); }
+  .acc > summary{
+    list-style: none; cursor: pointer; padding: 15px 2px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    font-size: 15px; font-weight: 500; color: var(--ink-heading);
+    transition: color .15s;
+  }
+  .acc > summary:hover{ color: var(--accent-hover); }
+  .acc > summary::-webkit-details-marker{ display: none; }
+  .acc-num{ color: var(--accent-hover); font-weight: 600; margin-right: 8px; }
+  .acc-chevron{ flex: none; transition: transform .2s ease; color: var(--accent-hover); }
+  .acc[open] > summary .acc-chevron{ transform: rotate(45deg); }
+  .acc-body{ padding: 0 2px 16px; }
+  .acc-body p{ font-size: 14px; line-height: 1.6; color: var(--ink-body); margin: 0; }
+  .acc-body ul{ display: flex; flex-direction: column; gap: 7px; }
+  .acc-body li{ display: flex; gap: 8px; font-size: 14px; line-height: 1.5; color: var(--ink-body); }
+  .acc-body li::before{ content: "—"; color: var(--accent); flex: none; }
+
+  @keyframes acc-reveal{ from{ opacity: 0; transform: translateY(-4px); } to{ opacity: 1; transform: none; } }
+  .acc[open] .acc-body{ animation: acc-reveal .18s ease; }
+
+  .prep-note{
+    background: var(--paper-soft); border-radius: 16px; padding: 18px 22px;
+    margin: 18px 0; display: flex; flex-direction: column; gap: 6px;
+  }
+  .prep-note p{ font-size: 13px; line-height: 1.6; color: var(--ink-soft); margin: 0; }
+  .prep-note strong{ color: var(--ink-heading); }
+  .prep-badge{
+    font-size: 13px; color: var(--ink-soft); margin: 18px 0 0;
+    padding-top: 16px; border-top: 1px solid var(--line);
+  }
+
+  .reeduc-card{
+    background: var(--card-soft);
+    display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; padding: 48px;
+  }
+  .reeduc-card p{ font-size: 15px; line-height: 1.7; color: var(--ink-body); margin: 0 0 16px; }
+  .reeduc-card p:last-child{ margin-bottom: 0; font-size: 14px; color: var(--ink-soft); }
+  .reeduc-list-label{ font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 14px; display: block; }
+  .reeduc-list{ display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; }
+  .reeduc-list li{ display: flex; gap: 8px; font-size: 14px; color: var(--ink-body); }
+  .reeduc-list li::before{ content: "—"; color: var(--accent); flex: none; }
+  .reeduc-list li.span-2{ grid-column: 1 / -1; }
+
+  .allaitement-card{ background: var(--card); max-width: 780px; }
+  .allaitement-card p{ font-size: 15px; line-height: 1.75; color: var(--ink-body); margin: 0; }
+
+  .tarifs-grid{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .tarifs-card{ background: var(--card-soft); padding: 32px; display: flex; flex-direction: column; gap: 12px; }
+  .tarifs-card h3{ font-size: 17px; font-weight: 600; }
+  .tarifs-card p{ font-size: 14px; line-height: 1.6; color: var(--ink-body); margin: 0; }
+  .tarifs-card p.small{ font-size: 13px; line-height: 1.55; }
+  .tarifs-card p.note{ font-size: 12px; line-height: 1.5; color: var(--ink-soft); margin-top: 4px; }
+  .tarifs-price{ font-family: 'Lora', serif; font-size: 20px; font-weight: 600; color: var(--accent); }
+  .tarifs-warn{ font-size: 13px; font-weight: 600; color: #C2477A; margin: 0; }
+
+  .contact-grid{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+  .contact-col span{ font-family: 'Lora', serif; font-size: 16px; font-weight: 600; color: var(--ink-heading); display: block; margin-bottom: 10px; }
+  .contact-col p{ font-size: 14px; line-height: 1.7; color: var(--ink-body); margin: 0; }
+  .contact-col a:hover{ color: var(--accent-hover); }
+  .contact-map{ margin-top: 40px; border-radius: 20px; overflow: hidden; border: 1px solid var(--line-deep); }
+  .contact-map iframe{ width: 100%; height: 320px; border: 0; display: block; }
+  .legal{
+    margin: 40px 0 0; font-size: 13px; color: var(--ink-soft);
+    border-top: 1px solid var(--line-deep); padding-top: 24px;
+  }
+
+  .avis-card{
+    background: var(--card-soft);
+    display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap;
+  }
+  .avis-card h2{ font-size: 24px; margin: 4px 0; }
+  .avis-card p{ font-size: 14px; line-height: 1.7; color: var(--ink-body); margin: 0; max-width: 52ch; }
+
+  .back-to-top{
+    position: fixed; right: 24px; bottom: 24px; z-index: 30;
+    width: 46px; height: 46px; border-radius: 50%;
+    background: var(--accent); color: #fff; border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 20px rgba(43,20,35,.18);
+    opacity: 0; transform: translateY(12px); pointer-events: none;
+    transition: opacity .2s ease, transform .2s ease, background .15s;
+  }
+  .back-to-top.is-visible{ opacity: 1; transform: none; pointer-events: auto; }
+  .back-to-top:hover{ background: var(--accent-hover); }
+
+  footer{
+    padding: 28px 0; border-top: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  }
+  footer .wrap{ display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; width: 100%; }
+  footer .brand-line{ font-size: 13px; color: var(--ink-soft); }
+  footer .legal-line{ font-size: 12px; color: var(--ink-faint); }
+
+  @media (max-width: 860px){
+    .wrap{ padding-left: 24px; padding-right: 24px; }
+    header{ padding: 14px 24px; }
+    .nav-toggle{ display: flex; }
+    nav{
+      position: fixed; top: var(--header-h); left: 0; right: 0;
+      background: var(--paper); border-bottom: 1px solid var(--line);
+      flex-direction: column; align-items: flex-start; gap: 4px;
+      padding: 12px 24px 20px;
+      max-height: 0; overflow: hidden; opacity: 0;
+      transition: max-height .25s ease, opacity .2s ease;
+    }
+    nav.is-open{ max-height: 420px; opacity: 1; }
+    nav a{ width: 100%; padding: 10px 0; }
+    nav a::after{ display: none; }
+    .hero{ grid-template-columns: 1fr; padding-top: 48px; }
+    .hero h1{ font-size: 30px; }
+    .hero-media{ order: -1; }
+    section{ padding: 56px 0; }
+    .prep-grid{ grid-template-columns: 1fr; }
+    .prep-grid .prep-card:first-child{ order: 1; }
+    .prep-grid .prep-card:last-child{ order: 2; }
+    .reeduc-card{ grid-template-columns: 1fr; padding: 28px; }
+    .tarifs-grid{ grid-template-columns: 1fr; }
+    .contact-grid{ grid-template-columns: 1fr 1fr; }
+    .avis-card{ padding: 32px; }
+    .card{ padding: 28px; }
+    .back-to-top{ right: 16px; bottom: 16px; }
+  }
+
+  @media (max-width: 520px){
+    .contact-grid{ grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#accueil">Aller au contenu</a>
+
+<header id="site-header">
+  <a class="brand" href="#accueil">
+    <span class="brand-name">Blanche Sebahoun</span>
+    <span class="brand-role">Sage-femme</span>
+  </a>
+  <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu">
+    <svg class="icon-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    <svg class="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <nav id="main-nav">
+    <a href="#accueil">Accueil</a>
+    <a href="#preparation">Préparation à la naissance</a>
+    <a href="#reeducation">Rééducation</a>
+    <a href="#allaitement">Allaitement</a>
+    <a href="#tarifs">Tarifs</a>
+    <a href="#contact">Contact</a>
+    <a href="#avis">Avis</a>
+  </nav>
+</header>
+
+<div class="wrap">
+  <div id="accueil" class="hero section-anchor">
+    <div class="hero-copy">
+      <span class="eyebrow">Sage-femme libérale — Paris 16ᵉ</span>
+      <h1>Un accompagnement sage-femme, de la grossesse au post-partum</h1>
+      <p>Après plus de vingt ans passés en salle de naissance et en suites de couches, et maman de deux enfants, j'ai ouvert mon cabinet pour accompagner chaque étape de la maternité avec la même attention. Je serais ravie d'en discuter avec vous, au cabinet.</p>
+      <div class="hero-actions">
+        <a class="btn" href="tel:+33685926337">Prendre rendez-vous</a>
+        <a class="btn-ghost" href="#preparation">Découvrir mes accompagnements</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <div class="hero-media-frame">
+        <div class="hero-media-fallback" aria-hidden="true">
+          <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4.5-3-8-6.2-8-10.2A5.3 5.3 0 0 1 9.3 5.5 5.3 5.3 0 0 1 12 7a5.3 5.3 0 0 1 2.7-1.5A5.3 5.3 0 0 1 20 10.8C20 14.8 16.5 18 12 21Z"/></svg>
+        </div>
+        <img src="hero.jpg" alt="Cabinet de Blanche Sebahoun, sage-femme" loading="eager" onerror="this.style.display='none'">
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="preparation" class="tint section-anchor">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Préparation à la naissance</span>
+      <h2>Deux méthodes, un même accompagnement</h2>
+    </div>
+    <div class="prep-grid reveal-stagger reveal">
+      <div class="card prep-card reveal-item">
+        <div class="prep-head">
+          <h3>Méthode classique</h3>
+          <span class="prep-tag">1 module de 8 cours — individuel ou petit groupe (3 pers. max)</span>
+        </div>
+
+        <details class="acc">
+          <summary><span><span class="acc-num">1.</span>Premiers échanges sur votre grossesse et votre accouchement à venir</span>
+            <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <div class="acc-body"><p>Rappels anatomiques : utérus, position du bébé, placenta, cordon, bassin, liquide amniotique...</p></div>
+        </details>
+
+        <details class="acc">
+          <summary><span><span class="acc-num">2.</span>Quand partir à la maternité</span>
+            <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <div class="acc-body"><p>Les différents signes à connaître.</p></div>
+        </details>
+
+        <details class="acc">
+          <summary><span><span class="acc-num">3.</span>L'arrivée à la maternité et la phase de dilatation</span>
+            <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <div class="acc-body"><ul>
+            <li>Préparation de la valise</li>
+            <li>Conseils avant de partir</li>
+            <li>Différentes situations à l'arrivée à la maternité</li>
+            <li>La péridurale</li>
+            <li>Le déroulement du travail</li>
+            <li>La place du père</li>
+            <li>Conseils pour vivre sereinement votre accouchement</li>
+          </ul></div>
+        </details>
+
+        <details class="acc">
+          <summary><span><span class="acc-num">4.</span>La phase d'expulsion et l'arrivée du bébé</span>
+            <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <div class="acc-body"><ul>
+            <li>L'installation</li>
+            <li>L'engagement du bébé</li>
+            <li>La poussée</li>
+            <li>L'épisiotomie</li>
+            <li>Les forceps</li>
+            <li>L'arrivée du bébé</li>
+            <li>La délivrance</li>
+          </ul></div>
+        </details>
+
+        <div class="prep-note">
+          <p><strong>Accompagnement personnalisé</strong>, individuel ou en groupe (3 pers. max).</p>
+          <p>Les papas sont les bienvenus uniquement en cours individuels — le planning est alors établi selon vos attentes.</p>
+          <p>Écoute du bébé après chaque cours, par Doppler fœtal.</p>
+        </div>
+
+        <details class="acc">
+          <summary><span><span class="acc-num">5.</span>Cours pratique sur la respiration et la poussée</span>
+            <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <div class="acc-body"><p>La césarienne.</p></div>
+        </details>
+
+        <details class="acc">
+          <summary><span><span class="acc-num">6.</span>L'allaitement (durée 1h30) : conseils et pratique</span>
+            <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <div class="acc-body"><ul>
+            <li>Choix du type d'allaitement</li>
+            <li>Rappel anatomique</li>
+            <li>La tétée : rythme, temps, comportement et besoins du bébé</li>
+            <li>La mise au sein : positions du bébé et de la maman</li>
+            <li>La montée laiteuse</li>
+            <li>Les complications</li>
+            <li>L'allaitement artificiel</li>
+          </ul></div>
+        </details>
+
+        <details class="acc">
+          <summary><span><span class="acc-num">7.</span>Prise en charge post-natale du bébé, en salle de travail et en suites de couches</span>
+            <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <div class="acc-body"><ul>
+            <li>Découvrir votre bébé</li>
+            <li>Les soins du bébé à la naissance et sa surveillance</li>
+            <li>Le peau à peau</li>
+            <li>L'examen du pédiatre</li>
+            <li>Le bain du bébé</li>
+            <li>La jaunisse</li>
+            <li>Conseils pratiques pour le retour à la maison</li>
+          </ul></div>
+        </details>
+
+        <details class="acc">
+          <summary><span><span class="acc-num">8.</span>Prise en charge post-natale de la maman, en salle de travail et en suites de couches</span>
+            <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <div class="acc-body"><ul>
+            <li>Après une voie basse et après une césarienne</li>
+            <li>La contraception</li>
+            <li>La rééducation</li>
+          </ul></div>
+        </details>
+      </div>
+
+      <div class="card prep-card reveal-item" style="align-self: start;">
+        <div class="prep-head">
+          <h3>Méthode URO-MG</h3>
+          <span class="prep-tag">À partir du 6ᵉ mois de grossesse</span>
+        </div>
+        <p class="desc">Méthode respiratoire reconnue permettant d'entretenir la sangle abdominale pendant la grossesse.</p>
+        <p class="desc">Cette méthode respiratoire favorise la protection du bébé, des organes et du périnée.</p>
+        <p class="desc">L'entretien de la sangle abdominale pendant la grossesse permet de soulager les douleurs lombaires, les inconforts urinaires et digestifs, ainsi qu'un travail de relaxation.</p>
+        <p class="desc">Pendant les contractions douloureuses, la méthode URO-MG permet de gérer plus facilement la douleur.</p>
+        <p class="desc" style="margin-bottom: 0;">Pendant la phase de dilatation et la poussée, elle facilite la descente du bébé et l'ouverture du col.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reeducation" class="section-anchor">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Post-partum</span>
+      <h2>Rééducation abdomino-périnéale</h2>
+    </div>
+    <div class="card reeduc-card reveal">
+      <div>
+        <p>Méthode reconnue, remboursée par la Sécurité sociale, elle a la particularité d'être non invasive et repose sur le travail de la sangle abdominale par le souffle.</p>
+        <p>Elle permet de rééduquer de façon physiologique l'abdomen et le périnée précocement après l'accouchement.</p>
+        <p>5 séances sont généralement suffisantes, car le travail se fait essentiellement à domicile, à raison d'un quart d'heure par jour. Un appareil prescrit et remboursé par l'assurance maladie permet de faire correctement votre rééducation, qui devient ludique et efficace.</p>
+        <p>Cette méthode permet aussi la reprise rapide d'une activité physique après l'accouchement et un retour plus rapide à un ventre plat.</p>
+        <p>Le travail respiratoire sera pour vous un vrai moment de relaxation — rééducation à visée à la fois préventive et thérapeutique, adaptée à tous les âges. Les bébés sont les bienvenus, un transat est à votre disposition.</p>
+      </div>
+      <div>
+        <span class="reeduc-list-label">Ce qu'elle prend en charge</span>
+        <ul class="reeduc-list">
+          <li>Incontinence urinaire d'effort et d'urgence</li>
+          <li>Prolapsus</li>
+          <li>Douleurs lombaires</li>
+          <li>Relâchements abdominaux</li>
+          <li>Diastasis</li>
+          <li>Troubles du transit</li>
+          <li class="span-2">Douleurs de la sphère génitale</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="allaitement" class="tint section-anchor">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Allaitement</span>
+      <h2>Consultation allaitement</h2>
+    </div>
+    <div class="card allaitement-card reveal">
+      <p>De la sortie de la maternité jusqu'au sevrage, un accompagnement individualisé pour que votre allaitement se déroule dans les meilleures conditions : mise en route, rythme des tétées, gestion des douleurs, sevrage en douceur.</p>
+    </div>
+  </div>
+</section>
+
+<section id="tarifs" class="section-anchor">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Tarifs</span>
+      <h2>Tarifs et remboursement</h2>
+    </div>
+    <div class="tarifs-grid reveal-stagger reveal">
+      <div class="card tarifs-card reveal-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 9.5c-.6-.7-1.6-1-2.6-1-1.9 0-3.4 1.1-3.4 3.5s1.5 3.5 3.4 3.5c1 0 2-.3 2.6-1"/><path d="M8 11h5.5M8 13h5.5"/></svg>
+        <h3>Actes les plus fréquents</h3>
+        <p>Cours, rééducation, visites</p>
+        <span class="tarifs-price">de 24 € à 100 €</span>
+      </div>
+      <div class="card tarifs-card reveal-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="2"/><path d="M2.5 9.5h19"/></svg>
+        <h3>Secteur de conventionnement</h3>
+        <p class="small">Cabinet conventionné. Si vous êtes enceinte, la Sécurité sociale rembourse 100&nbsp;% du tarif de base (visites prénatales, échographies, préparation à la naissance...), dans la limite des séances prévues et sous réserve d'avoir déclaré votre grossesse.</p>
+        <p class="small">Si vous n'êtes pas enceinte, elle rembourse 70&nbsp;% du tarif de base ; le reste peut être pris en charge par votre mutuelle.</p>
+        <p class="note">Des dépassements d'honoraires sont possibles pour une demande exceptionnelle (visite à domicile, week-end, jour férié) — jamais remboursés par la Sécurité sociale.</p>
+      </div>
+      <div class="card tarifs-card reveal-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="2"/><path d="M2.5 9.5h19"/><path d="M6 15h4"/></svg>
+        <h3>Moyens de paiement</h3>
+        <p>Chèques, espèces et virement bancaire.</p>
+        <p class="tarifs-warn">Cartes bancaires non acceptées</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="tint-deep section-anchor">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Accès &amp; contact</span>
+      <h2>Venir au cabinet</h2>
+    </div>
+    <div class="contact-grid reveal">
+      <div class="contact-col">
+        <span>Cabinet</span>
+        <p>51 Rue Jean de la Fontaine<br>75016 Paris</p>
+      </div>
+      <div class="contact-col">
+        <span>Accès</span>
+        <p>Métro Porte d'Auteuil<br>(lignes 9 et 10) · Bus PC, 32, 52</p>
+      </div>
+      <div class="contact-col">
+        <span>Horaires</span>
+        <p>Du lundi au vendredi<br>Consultation sur rendez-vous</p>
+      </div>
+      <div class="contact-col">
+        <span>Contact</span>
+        <p><a href="tel:+33685926337">06 85 92 63 37</a><br><a href="mailto:bsebahoun@icloud.com">bsebahoun@icloud.com</a></p>
+      </div>
+    </div>
+    <div class="contact-map reveal">
+      <iframe src="https://www.google.com/maps?q=51+Rue+Jean+de+la+Fontaine,+75016+Paris&output=embed" title="Localisation du cabinet, 51 Rue Jean de la Fontaine, 75016 Paris" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <p class="legal">Conventionnée · Membre d'une association de gestion agréée, le règlement par chèque est accepté.</p>
+  </div>
+</section>
+
+<section id="avis" class="section-anchor">
+  <div class="wrap">
+    <div class="card avis-card reveal">
+      <div>
+        <span class="eyebrow">Avis</span>
+        <h2>Vos retours comptent</h2>
+        <p>Vous pouvez laisser un témoignage sur les cours ou les séances de rééducation suivis ensemble.</p>
+      </div>
+      <a class="btn" href="http://www.free-livredor.com/blanche-ma-sage-femme-127901-1.html" target="_blank" rel="noopener">Lire &amp; laisser un avis</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="brand-line">Blanche Sebahoun — Sage-femme</span>
+    <span class="legal-line">Site réalisé selon les recommandations du Conseil National de l'Ordre des Sages-Femmes.</span>
+  </div>
+</footer>
+
+<button class="back-to-top" id="back-to-top" aria-label="Retour en haut de page">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+(function(){
+  var header = document.getElementById('site-header');
+  var toggle = document.getElementById('nav-toggle');
+  var nav = document.getElementById('main-nav');
+  var backToTop = document.getElementById('back-to-top');
+  var navLinks = Array.prototype.slice.call(nav.querySelectorAll('a'));
+  var sections = navLinks
+    .map(function(a){ return document.querySelector(a.getAttribute('href')); })
+    .filter(Boolean);
+
+  toggle.addEventListener('click', function(){
+    var open = nav.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+  });
+
+  nav.addEventListener('click', function(e){
+    if (e.target.tagName === 'A' && nav.classList.contains('is-open')){
+      nav.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Ouvrir le menu');
+    }
+  });
+
+  function onScroll(){
+    var y = window.scrollY || window.pageYOffset;
+    header.classList.toggle('is-scrolled', y > 4);
+    backToTop.classList.toggle('is-visible', y > 480);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  backToTop.addEventListener('click', function(){
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  if ('IntersectionObserver' in window){
+    var revealObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(function(el){ revealObserver.observe(el); });
+
+    var spyObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        var link = navLinks.filter(function(a){ return a.getAttribute('href') === '#' + entry.target.id; })[0];
+        if (!link) return;
+        if (entry.isIntersecting){
+          navLinks.forEach(function(a){ a.classList.remove('active'); });
+          link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    sections.forEach(function(sec){ spyObserver.observe(sec); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('is-visible'); });
+  }
+
+  function realignHash(){
+    if (!location.hash) return;
+    var target = document.querySelector(location.hash);
+    if (!target) return;
+    var root = document.documentElement;
+    var prev = root.style.scrollBehavior;
+    root.style.scrollBehavior = 'auto';
+    target.scrollIntoView({ block: 'start' });
+    root.style.scrollBehavior = prev;
+  }
+  if (document.fonts && document.fonts.ready){
+    document.fonts.ready.then(realignHash);
+  }
+  window.addEventListener('load', realignHash);
+})();
+</script>
+
+</body>
+</html>
